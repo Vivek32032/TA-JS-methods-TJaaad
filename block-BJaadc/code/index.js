@@ -14,7 +14,8 @@ console.log(`The index of still is ${message.indexOf('still')}`)
 // Log the index of word "answers" in message
 console.log(`The index of answers is ${message.indexOf('answers')}`)
 // Log true or false based on whether the word "answer" exist in message or not
-console.log(message.includes('answer'))
+console.log(message.includes('answers'))
+console.log(message.indexOf("asnwers") !== -1)
 // Log true or false based on whether the word "they" exist in message or not
 console.log(message.includes('they'))
 // Log true or false based on whether the word "is" exist in message or not
@@ -22,15 +23,17 @@ console.log(message.includes('is'))
 // Log true or false based on whether the word "Is" exist in message or not
 console.log(message.includes('Is'))
 // Check and log whether the word from index 3 to 6 is "you" or not (use slice)
-console.log(message.slice(3,6)=='you'?true:false)//you
+console.log(message.slice(3,6)=='you')//you
 // Check and log whether the word from index 7 to 8 is "a" or not
-console.log(message.slice(7,8)=='a'?true:false)
+console.log(message.slice(7,8)=='a')
 // Check and log whether the last 3 character in message is "no!" or not (you can use -3 in slice)
-console.log(message.slice(message.length-3,message.length)=='no!'?true:false);
+console.log(message.slice(message.length-3,message.length)=='no!');
+console.log(message.slice(-3) === "no!");
 
 console.log(message.endsWith('no!'));
 // Check and log whether the last 5 character in message is "no!" or not
 console.log(message.slice(message.length-5,message.length)=='no!'?true:false);
+console.log(message.slice(-5) === "no!");
 
 // Log the message variable, all in lowecase
 console.log(message.toLowerCase())
@@ -46,13 +49,13 @@ console.log(newMessage)
 newMessage = newMessage.replace("thinking","decide")
 console.log(newMessage)
 // Log all the characters from the message variable (you can user for..of loop on string)
-for(let value of message){
-    console.log(value)
+for(let char of message){
+    console.log(char)
 }
 // Split all the words in message (split by " " space) and store it in a variable messageArray
 let messageArray = message.split(" ");
 console.log(messageArray)
 // Log all the words of messageArray
-for(let value of messageArray){
-    console.log(value)
+for(let word of messageArray){
+    console.log(word)
 }
