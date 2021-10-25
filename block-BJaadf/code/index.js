@@ -17,8 +17,7 @@ fruits.unshift('Guava');
 // Add a new element to the start ('Dragon Fruit') and shift the index of all other to one higher value
 fruits.unshift('Dragon Fruit');
 // Log true or false based on the value at index 0 and 1 is 'Dragon Fruit' and 'Guava' or not
-index[0]=='Dragon Fruit'?true:false;
-index[1]=='Guava'?true:false;
+index[0]=='Dragon Fruit'?true:false || index[1]=='Guava'?true:false;
 
 // Update the value of index 1 to `Pears`
 fruits[1]='Pears';
@@ -33,7 +32,10 @@ fruits = fruits.concat(moreFruits);
 // Log the name of all fruit in console
 fruits.forEach(value => console.log(value))
 // Convert each fruit name to lowercase and log it
-fruits.map(value =>value.toLowerCase())
+fruits.map(value =>value.toLowerCase());
+fruits.forEach((fruits) =>{
+    console.log(fruits.toLowerCase())
+})
 
 // Convert all fruits name into lowercase and store in new array named lowercaseFruits
 let lowercaseFruits =fruits.map(value =>value.toLowerCase())
@@ -53,10 +55,10 @@ console.log(numbersTwo.flat(3));
 // Convert the numbersThree array to one level element.
 numbersThree=numbersThree.flat(Infinity);
 // Remove all sub-arrays to individual elements, log them and update the value of numbersThree to the new flat array.
-let newNumbersThree = numbersThree.flat(Infinity)
+numbersThree = numbersThree.flat(Infinity)
 console.log(newNumbersThree);
 // Use forEach to log all the elements of numberThree array
-newNumbersThree.forEach(value => console.log(value));
+numbersThree.forEach(value => console.log(value));
 // Create a new variable named doubleNumbers that store the numberThree array (each element should be multiplied by 2). Use map
 let doubleNumbers = numbersThree.map(value => value*2)
 // Create a new variable named tripleNumbers that store the numberThree array (each element should be multiplied by 3). Use map
@@ -69,12 +71,14 @@ let oddNumbers = numbersThree.filter(value => value%2 !==0)
 let evenNumbers = numbersThree.filter(value => value%2 === 0)
 
 // Find the index of 10 in numbersThree array
-numbersThree.indexOf(10)
+numbersThree.indexOf(10);
+numbersThree.find((num)=> num == 10);
 // Reverse the values of numbersThree array
 numbersThree.reverse();
 // Reverse the values of numbersTwo array
 numbersTwo.reverse()
 // Join all fruits with '-', convert to uppercase and log it
-fruits.join("-");
+console.log(fruits.join("-").toUpperCase());
 
 // Join all fruits with '&', convert to lowercase and log it
+console.log(fruits.join("&").toLowerCase());
