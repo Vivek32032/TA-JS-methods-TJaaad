@@ -7,11 +7,11 @@ let to = 'Arya Stark';
 /*
 1. Find the index of the first 'is' in the variable quote. And store it in a new variable named indexOfIs
 */
-quote.indexOf('is');
+let indexOfIs=quote.indexOf('is');
 /*
 2. Find the character at the index indexOfIs (Problem 1) in quote.
 */
-quote.charAt(quote.indexOf('is'));
+quote.charAt(indexOfIs);
 quote.charAt(6);
 /*
 3. Log the message saying `The index of first is in quote is 7`
@@ -27,7 +27,8 @@ console.log(`The index of first is in quote is ${quote.indexOf('is')}`)
   The character at index 5 is ' '
 */
 for(let i=0;i<6;i++){
-console.log(quote.charAt(i));}
+console.log(`The character at index ${i} is
+${quote[i]}`);}
 /*
 5. Using the variable from , to and quote variable dispaly this message
   "Syrio Forel said There is only one thing we say to death: Not today to Arya Stark." (use concat method)
@@ -79,11 +80,11 @@ quote.lastIndexOf("a",quote.lastIndexOf("a")-1);
 Example: "Hello" (convert to 10 characters) => "Hello....."
 Store the output in a new variable
 */
-quote.padEnd(70,".")
+let newEndQuote = quote.padEnd(70,".")
 /*
 16. Do same as (15) but the ... should come in start. Store the output in a new variable
 */
-
+let newStartQuote = quote.padStart(70,".")
 /*
 17. Log the repeat of "Hello World!" 10 times.
 */
@@ -99,11 +100,10 @@ to.replace('Stark',"Lannister");
 /*
 20. Make the quote of length 30 and put ... at the end. (use slice)
 */
-quote=quote.slice(0,27)
-quote.padEnd(30,".")
+let limit = quote.slice(0,30)+"...";
 /*
 21. Find out does quote, from, to starts with "A"
 */
-quote.startsWith("A");
-to.startsWith("A");
-from.startsWith("A");
+console.log(quote.startsWith("A"));
+console.log(to.startsWith("A"));
+console.log(from.startsWith("A"));
