@@ -22,14 +22,13 @@ let persons = [
 // Log the filtered named of people in peopleName that starts with 'J' or 'P'
    console.log(peopleName.filter((a)=>a.startsWith('J')||a.startsWith('P')))
 // Log the length of filtered named of people in peopleName that starts with 'A' and 'C'
-   let nameWithAorC = peopleName.filter((a)=>a.startsWith('A')||a.startsWith('C'))
-    console.log(nameWithAorC.map((a)=>a.length))
+   console.log(peopleName.filter((a)=>a.startsWith('A')||a.startsWith('C')).length)
 // Log all the filtered male ('M') in persons array
    console.log(persons.filter((s)=> s.sex === "M"))
 // Log all the filtered female ('F') in persons array
    console.log(persons.filter((s)=> s.sex === "F"))
 // Log all the filtered female ('F') whose name starts with 'C' or 'J' in persons array
-   let femaleWithAorC = persons.filter((s)=> s.sex === "F").filter((a)=>a.name.startsWith('A')||a.name.startsWith('C'))
+   let femaleWithAorC = persons.filter((s)=> s.sex === "F").filter((a)=>a.name.startsWith('J')||a.name.startsWith('C'))
    console.log(femaleWithAorC);
 // Log all the even numbers from peopleGrade array
    console.log(peopleGrade.filter((even)=> even%2===0))
@@ -48,15 +47,15 @@ let persons = [
 // Find the average grade
    console.log(gradeTotal/persons.length)
 // Find the average grade of male
-   let avgGradeM = malePersons.map((a)=>a.grade).reduce((a,b)=> a+ b,0)/malePersons.length
+   let avgGradeM = malePersons.reduce((a,b)=> a+ b.grade,0)/malePersons.length
 // Find the average grade of female
    let avgGradeM = femalePersons.map((a)=>a.grade).reduce((a,b)=> a+ b,0)/femalePersons.length
 // Find the highest grade
-   let highestGrade = peopleGrade.sort((a,b)=> b-a)[0]
+   let highestGrade =[...peopleGrade].sort((a,b)=> b-a)[0]
 // Find the highest grade in male
-   console.log(malePersons.map((a)=> a.grade).sort((a,b)=> b-a)[0])
+   console.log([...malePersons].map((a)=> a.grade).sort((a,b)=> b-a)[0])
 // Find the highest grade in female
-   console.log(femalePersons.map((a)=> a.grade).sort((a,b)=> b-a)[0])
+   console.log([...femalePersons].map((a)=> a.grade).sort((a,b)=> b-a)[0])
 // Find the highest grade for people whose name starts with 'J' or 'P'
    console.log(persons.filter((a)=>a.name[0]==='J'||a.name[0]==='P').sort((a,b)=>b.grade-a.grade)[0]) 
 // Sort the peopleGrade in ascending order and log the value of peopleGrade. Notice did the elements of peopleGrade got changed?
