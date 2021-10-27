@@ -10,41 +10,25 @@ let words = [
 ];
 
 // - Write a function findLongestWord that takes an array of words and returns the longest word from the array. (Use above array "words" to test it). If there are 2 with the same length, it should return the first occurrence.
-let findLongestWord = (arr) => [...arr].sort((a, b) => a.length - b.length)
+let findLongestWord = (arr) => [...arr].sort((a, b) => a.length - b.length).pop();
 // - Convert the above array "words" into an array of length of word instead of word.
 let lengthOfWords = (words) => [...words].map(word => word.length)
 // - Create a new array that only contains word with atleast one vowel.
 let wordsWithVowel = words.filter(word => {
   return word.includes("a") ||
-    word.includes("e") ||
-    word.includes("i") ||
-    word.includes("o") ||
-    word.includes("u")
+    word.toLowerCase().includes("e") ||
+    word.toLowerCase().includes("i") ||
+    word.toLowerCase().includes("o") ||
+    word.toLowerCase().includes("u")
 })
 
 // - Find the index of the word "rhythm"
 words.indexOf("rhythm")
+words.findIndex((w)=> w == "rhythm")
 // - Create a new array that contains words not starting with vowel.
-let wordsStartsWithoutVowel = words.filter(word => {
-  if (
-    word.startsWith("a") ||
-    word.startsWith("e") ||
-    word.startsWith("i") ||
-    word.startsWith("o") ||
-    word.startsWith("u")
-  ) { return false; } else return true
-})
+let wordsStartsWithoutVowel = words.filter((word) => !wordsWithVowel(word[0]))
 // - Create a new array that contains words not ending with vowel
-let wordsEndsWithoutVowel = words.filter(word => {
-  if (
-    word.endsWith("a") ||
-    word.endsWith("e") ||
-    word.endsWith("i") ||
-    word.endsWith("o") ||
-    word.endsWith("u")
-  ) {
-return false; } else return true
-})
+let wordsEndsWithoutVowel = words.filter((word) => !wordsWithVowel(word[word.length-1]))
 
 
 let numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
@@ -58,11 +42,11 @@ let numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 // - Create  a new array that contains only odd numbers.
    let oddNumbers = (numbers) => numbers.filter((a) => a%2 !== 0)
 // - Create a new array that should have true for even number and false for odd numbers.
-    let evenOdd = (numbers) => numbers.map((a) => a%2 === 0?true:false)
+    let evenOdd = (numbers) => numbers.map((a) => a%2 === 0)
 // - Sort the above number in assending order.
-    let assendingSort = (numbers) => numbers.sort((a,b) => a-b)
+    let assendingSort = (numbers) => [...numbers].sort((a,b) => a-b)
 // - Does sort mutate the original array?
-     yes,
+    // yes,
 // - Find the sum of the numbers in the array.
      sumArray(numbers);//87
 //- Write a function averageNumbers that receives an array of numbers and calculate the average of the numbers
