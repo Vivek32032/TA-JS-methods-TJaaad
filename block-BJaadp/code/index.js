@@ -13,22 +13,22 @@ let persons = [
   { name: 'Arya', grade: 14, sex: 'F' },
 ];
 
-// NOTE: Use reduce method whereever you can to solve this exercise:
+// NOTE: Use reduce method wherever you can to solve this exercise:
 
 // Find the average grade
-
+   persons.map((a)=> a.grade).reduce((a,b)=> a+b,0)/persons.length;
 // Find the average grade of male
-
-// Find the average grade of female
-
+   persons.filter((a)=>  a.sex==="M").reduce((a,b)=> a+b.grade,0)/persons.filter((a)=>  a.sex==="M") ;
+// Find the average grade of female 
+   persons.filter((a)=>  a.sex==="F").reduce((a,b)=> a+b.grade,0)/persons.filter((a)=>  a.sex==="F") ;
 // Find the highest grade
-
+   persons.sort((a,b)=> b.grade-a.grade)[0]
 // Find the highest grade in male
-
+   persons.filter((a) => a.sex === "M").sort((a,b)=> b.grade-a.grade)[0]
 // Find the highest grade in female
-
+   persons.filter((a) => a.sex === "F").sort((a,b)=> b.grade-a.grade)[0]
 // Find the highest grade for people whose name starts with 'J' or 'P'
-
+   persons.filter((a) => a.name.startsWith("J")|| a.name.startsWith("P")).sort((a,b)=> b.grade-a.grade)[0]
 const fruitBasket = [
   'banana',
   'cherry',
@@ -51,7 +51,15 @@ that fruit has appeared in the array. Store it in new variable fruitsObj
 Output: 
 {banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
 */
-
+let fruitsObj = {};
+// let newBasket = [...fruitBasket].sort((a,b)=> a-b.length).sort();
+let noOfF = ()=> {
+for(let i=0;i<fruitBasket.length;i++){
+    if(fruitBasket[i]===fruitBasket[i+1]){
+      no +=1; 
+    }else 1;
+}
+fruitsObj[fruitBasket[i]]=no
 /* 
 
 Use the fruitBasket array to create an array of array. Each array will contain two values name of fruit and number of times
