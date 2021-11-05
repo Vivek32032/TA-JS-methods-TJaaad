@@ -1,36 +1,39 @@
 // NOTE: You can only use the (reduce) array method to solve this exercise:
 
-function countAllPeople() {
-  // your code goes here
-}
+let countAllPeople = () => {
+  return got.houses.reduce((acc,cv)=> acc + cv.people.length,0)}
 
-function peopleByHouses() {
-  // your code goes here
-}
 
-function everyone() {
-  // your code goes here
-}
+let peopleByHouses = () => got.houses.reduce((acc,cv)=> { 
+    acc[cv.name] = cv.people.length;
+    return acc},{})
 
-function nameWithS() {
-  // your code goes here
-}
+let everyone = () => got.houses.reduce((acc,cv)=> { 
+    cv.people.forEach((a)=> acc.push(  a.name));
+    return acc},[])
 
-function nameWithA() {
-  // your code goes here
-}
+let nameWithS = () =>  got.houses.reduce((acc,cv)=> { 
+  cv.people.forEach((a)=> a.name.toLowerCase().includes("s")?acc.push(a.name):acc)
+return acc },[])
+  
 
-function surnameWithS() {
-  // your code goes here
-}
+let nameWithA = () =>  got.houses.reduce((acc,cv)=> { 
+  cv.people.forEach((a)=> a.name.toLowerCase().includes("a")?acc.push(a.name):acc)
+return acc },[])
 
-function surnameWithA() {
-  // your code goes here
-}
+let surnameWithS = () =>  got.houses.reduce((acc,cv)=> { 
+  cv.people.forEach((a)=> a.name.split(" ")[1].includes("S")?acc.push(a.name):acc)
+return acc },[])
 
-function peopleNameOfAllHouses() {
-  // your code goes here
-}
+let surnameWithA =()  =>  got.houses.reduce((acc,cv)=> { 
+  cv.people.forEach((a)=> a.name.split(" ")[1].includes("A")?acc.push(a.name):acc)
+return acc },[])
+
+
+let peopleNameOfAllHouses =()=> got.houses.reduce((acc,cv)=> { 
+  acc[cv.name] = cv.people.map((a)=> a.name);
+  return acc},{})
+
 
 // Testing your result after writing your function
 console.log(countAllPeople());
