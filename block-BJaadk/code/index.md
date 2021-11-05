@@ -12,6 +12,8 @@ let doubleNum = numbers.forEach(double);
 ```
 ![](./img/main.png)
 
+//i will do it later
+
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
